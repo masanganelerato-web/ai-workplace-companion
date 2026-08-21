@@ -3,11 +3,11 @@ export type AssistantFeature = "email" | "notes" | "planner" | "research";
 export interface AssistantRequest {
   feature: AssistantFeature;
   input: string;
-  tone?: string;
-  audience?: string;
-  length?: string;
-  timeframe?: string;
-  depth?: string;
+  tone?: string | undefined;
+  audience?: string | undefined;
+  length?: string | undefined;
+  timeframe?: string | undefined;
+  depth?: string | undefined;
 }
 
 const BASE_RULES = `You are an expert workplace productivity assistant for busy professionals.
