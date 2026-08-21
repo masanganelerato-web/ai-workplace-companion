@@ -22,7 +22,7 @@ const nav = [
   { to: "/chat", label: "Assistant Chat", icon: MessagesSquare },
 ] as const;
 
-function NavItems({ onNavigate }: { onNavigate?: () => void }) {
+function NavItems({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
@@ -49,7 +49,7 @@ function NavItems({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarContent({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col gap-6 p-4">
       <Link to="/" onClick={onNavigate} className="flex items-center gap-2.5 px-2 pt-1">
